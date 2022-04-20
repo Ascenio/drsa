@@ -18,3 +18,12 @@ bool isPrime(int number) {
   }
   return true;
 }
+
+int generatePrimeNumber(Random random, [int upperBound = 1000]) {
+  while (true) {
+    final number = random.nextInt(upperBound);
+    if (isPrime(number)) {
+      return number;
+    }
+  }
+}

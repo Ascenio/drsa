@@ -1,12 +1,24 @@
+import 'dart:math';
+
 import 'package:rsa/rsa.dart';
 import 'package:test/test.dart';
 
 void main() {
-  test('matches all first 1000 primes', () {
-    const numbersToTest = 7919;
-    final numbers = Iterable.generate(numbersToTest, (i) => i + 1);
-    final primeNumbers = numbers.where(isPrime);
-    expect(primeNumbers, orderedEquals(first1000Primes));
+  group('isPrime', () {
+    test('matches all first 1000 primes', () {
+      const numbersToTest = 7919;
+      final numbers = Iterable.generate(numbersToTest, (i) => i + 1);
+      final primeNumbers = numbers.where(isPrime);
+      expect(primeNumbers, orderedEquals(first1000Primes));
+    });
+  });
+
+  group('generatePrimeNumber', () {
+    const seed = 4269;
+    const expectedPrimeNumber = 457;
+    final random = Random(seed);
+    final primeNumber = generatePrimeNumber(random);
+    expect(primeNumber, expectedPrimeNumber);
   });
 }
 
