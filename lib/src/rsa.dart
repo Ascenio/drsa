@@ -49,19 +49,3 @@ int pickD({required int e, required int phi}) {
     }
   }
 }
-
-Iterable<int> encrypt({
-  required Iterable<int> message,
-  required int e,
-  required int n,
-}) {
-  return message.map((letter) => letter.modPow(e, n));
-}
-
-Iterable<int> decrypt({
-  required Iterable<int> message,
-  required int d,
-  required int n,
-}) {
-  return message.map((letter) => letter.modPow(d, n));
-}

@@ -1,6 +1,8 @@
 import 'dart:math';
 
 import 'package:rsa/rsa.dart';
+import 'package:rsa/src/keys/private_key.dart';
+import 'package:rsa/src/keys/public_key.dart';
 
 void main() {
   final random = Random(4269);
@@ -11,8 +13,10 @@ void main() {
   final e = pickE(phi: phi, n: n);
   final d = pickD(phi: phi, e: e);
   final input = 'Hello World';
-  final encrypted = encrypt(message: input.codeUnits, e: e, n: n);
-  final decrypted = decrypt(message: encrypted, d: d, n: n);
+  final privateKey = PrivateKey(e: e, n: n);
+  final publicKey = PublicKey(d: d, n: n);
+  final encrypted = privateKey.apply(input.codeUnits);
+  final decrypted = publicKey.apply(encrypted);
   final output = String.fromCharCodes(decrypted);
   print(output);
 }

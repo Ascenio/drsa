@@ -53,22 +53,16 @@ void main() {
     });
   });
 
-  group('encrypt', () {
-    test('guarantees the output is different than the input', () {
-      final input = 'Hello World';
-      final output = encrypt(message: input.codeUnits, e: 5, n: 14);
-      expect(input.codeUnits, isNot(orderedEquals(output)));
-    });
-  });
-
   group('encryption and decryption', () {
     test('are inverse of each other', () {
       const e = 5;
       const d = 157229;
       const n = 394391;
       const input = 'Hello World';
-      final encrypted = encrypt(message: input.codeUnits, e: e, n: n);
-      final decrypted = decrypt(message: encrypted, d: d, n: n);
+      final privateKey = PrivateKey(e: e, n: n);
+      final publicKey = PublicKey(d: d, n: n);
+      final encrypted = privateKey.apply(input.codeUnits);
+      final decrypted = publicKey.apply(encrypted);
       expect(decrypted, orderedEquals(input.codeUnits));
     });
   });
