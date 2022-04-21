@@ -6,7 +6,7 @@ An implementation of [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem)) alg
 
 ### With a seed
 
-To create reproducable keypairs you just need to provide a `Random` created from a seed.
+To create reproducible keypairs you just need to provide a `Random` created from a seed.
 
 ```dart
 void main() {
