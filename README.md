@@ -29,7 +29,3 @@ Just use the secure constructor of `Random`. The rest keeps the same as above.
 final random = Random.secure();
 // ...
 ```
-
-## Recommendations
-
-As the example shown in [create an anchor](#usage)
