@@ -1,4 +1,4 @@
-import 'package:rsa/src/keys/key.dart';
+import 'package:drsa/src/keys/key.dart';
 
 class PrivateKey implements Key {
   const PrivateKey({required this.e, required this.n});

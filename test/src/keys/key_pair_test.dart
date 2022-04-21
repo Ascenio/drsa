@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:rsa/rsa.dart';
+import 'package:drsa/drsa.dart';
 import 'package:test/test.dart';
 
 void main() {

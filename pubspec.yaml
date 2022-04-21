@@ -1,5 +1,5 @@
-name: rsa
-description: A simple command-line application.
+name: drsa
+description: An implementation of RSA algorithm in Dart
 version: 1.0.0
 environment:
   sdk: ">=2.16.2 <3.0.0"

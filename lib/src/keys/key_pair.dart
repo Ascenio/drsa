@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:rsa/rsa.dart';
+import 'package:drsa/drsa.dart';
 
 class KeyPair {
   const KeyPair({required this.privateKey, required this.publicKey});

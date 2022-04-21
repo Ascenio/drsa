@@ -1,4 +1,4 @@
-import 'package:rsa/src/keys/key.dart';
+import 'package:drsa/src/keys/key.dart';
 
 class PublicKey implements Key {
   const PublicKey({required this.d, required this.n});
