@@ -10,7 +10,7 @@ bool isPrime(int number) {
   if (number.isEven) {
     return false;
   }
-  int n = sqrt(number).floor();
+  final n = sqrt(number).floor();
   for (var i = 3; i <= n; i++) {
     if (number % i == 0) {
       return false;
@@ -33,7 +33,7 @@ bool areCoprimes(int a, int b) {
 }
 
 int pickE({required int phi, required int n}) {
-  for (int e = 2; e < phi; e++) {
+  for (var e = 2; e < phi; e++) {
     final isCoprimeWithPhi = areCoprimes(e, phi);
     if (isCoprimeWithPhi) {
       return e;
