@@ -26,6 +26,8 @@ If you don't want a specific keypair, you may want to use a more secure one-time
 Just use the secure constructor of `Random`. The rest keeps the same as above.
 
 ```dart
-final random = Random.secure();
-// ...
+void main() {
+  final random = Random.secure();
+  // ...
+}
 ```
