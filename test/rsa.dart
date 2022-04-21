@@ -14,11 +14,63 @@ void main() {
   });
 
   group('generatePrimeNumber', () {
-    const seed = 4269;
-    const expectedPrimeNumber = 457;
-    final random = Random(seed);
-    final primeNumber = generatePrimeNumber(random);
-    expect(primeNumber, expectedPrimeNumber);
+    test('generates a prime number for a given seed', () {
+      const seed = 4269;
+      const expectedPrimeNumber = 457;
+      final random = Random(seed);
+      final primeNumber = generatePrimeNumber(random);
+      expect(primeNumber, expectedPrimeNumber);
+    });
+  });
+
+  group('areCoprime', () {
+    test('returns true for two numbers which are coprimes', () {
+      expect(areCoprimes(4, 9), true);
+    });
+
+    test('returns false for two numbers which are not coprimes', () {
+      expect(areCoprimes(15, 45), false);
+    });
+
+    test('returns true for two prime numbers', () {
+      expect(areCoprimes(59, 67), true);
+    });
+  });
+
+  group('pickE', () {
+    test('picks an E accordingly', () {
+      const expectedE = 5;
+      final e = pickE(phi: 6, n: 14);
+      expect(e, expectedE);
+    });
+  });
+
+  group('pickD', () {
+    test('picks a D accordingly', () {
+      const expectedD = 5;
+      final d = pickD(phi: 6, e: 5);
+      expect(d, expectedD);
+    });
+  });
+
+  group('encrypt', () {
+    test('guarantees the output is different than the input', () {
+      final input = 'Hello World';
+      final output = encrypt(message: input.codeUnits, e: 5, n: 14);
+      expect(input.codeUnits, isNot(orderedEquals(output)));
+    });
+  });
+
+  group('encryption and decryption', () {
+    test('are inverse of each other', () {
+      const e = 5;
+      const d = 157229;
+      const n = 394391;
+      const input = 'Hello World';
+      final encrypted = encrypt(message: input.codeUnits, e: e, n: n);
+      final decrypted = decrypt(message: encrypted, d: d, n: n);
+      expect(decrypted, orderedEquals(input.codeUnits));
+    });
   });
 }
 
