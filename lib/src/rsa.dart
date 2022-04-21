@@ -34,8 +34,7 @@ bool areCoprimes(int a, int b) {
 
 int pickE({required int phi, required int n}) {
   for (var e = 2; e < phi; e++) {
-    final isCoprimeWithPhi = areCoprimes(e, phi);
-    if (isCoprimeWithPhi) {
+    if (areCoprimes(e, phi)) {
       return e;
     }
   }
