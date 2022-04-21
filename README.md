@@ -4,7 +4,7 @@ An implementation of [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem)) alg
 
 ## Usage
 
-## With a seed
+### With a seed
 
 To create reproducable keypairs you just need to provide a `Random` created from a seed.
 
@@ -20,7 +20,7 @@ void main() {
 }
 ```
 
-## Without a seed
+### Without a seed
 
 If you don't want a specific keypair, you may want to use a more secure one-time generated keypair.
 Just use the secure constructor of `Random`. The rest keeps the same as above.
