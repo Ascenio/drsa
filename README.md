@@ -17,6 +17,7 @@ void main() {
   final decrypted = keyPair.publicKey.apply(encrypted);
   final output = String.fromCharCodes(decrypted);
   print(output); // Hello World
+}
 ```
 
 ## Without a seed
