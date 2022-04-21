@@ -22,7 +22,7 @@ void main() {
 
 ### Without a seed
 
-If you don't want a specific keypair, you may want to use a more secure one-time generated keypair.
+If you don't want a specific key pair, you may want to use a more secure one-time generated key pair.
 Just use the secure constructor of `Random`. The rest keeps the same as above.
 
 ```dart
