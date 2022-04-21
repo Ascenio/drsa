@@ -1,8 +1,6 @@
 import 'dart:math';
 
 import 'package:rsa/rsa.dart';
-import 'package:rsa/src/keys/private_key.dart';
-import 'package:rsa/src/keys/public_key.dart';
 
 void main() {
   final random = Random(4269);
