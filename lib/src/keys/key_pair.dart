@@ -10,7 +10,7 @@ class KeyPair {
     final q = generatePrimeNumber(random);
     final n = p * q;
     final phi = (p - 1) * (q - 1);
-    final e = pickE(phi: phi, n: n);
+    final e = pickE(phi: phi);
     final d = pickD(phi: phi, e: e);
     final privateKey = PrivateKey(e: e, n: n);
     final publicKey = PublicKey(d: d, n: n);

@@ -40,7 +40,7 @@ void main() {
   group('pickE', () {
     test('picks an E accordingly', () {
       const expectedE = 5;
-      final e = pickE(phi: 6, n: 14);
+      final e = pickE(phi: 6);
       expect(e, expectedE);
     });
   });

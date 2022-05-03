@@ -32,7 +32,7 @@ bool areCoprimes(int a, int b) {
   return a.gcd(b) == 1;
 }
 
-int pickE({required int phi, required int n}) {
+int pickE({required int phi}) {
   for (var e = 2; e < phi; e++) {
     if (areCoprimes(e, phi)) {
       return e;
